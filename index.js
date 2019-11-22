@@ -52,7 +52,7 @@ function displayNews() {
         newsBox += `<div class="col-md-3">
                         <div class="new pt-5">
                         <img src="` + news[i].urlToImage + `" class="img-fluid"/>
-                            <h2 class="text-danger">` + news[i].title + `</h2>
+                            <h2>` + news[i].title + `</h2>
                             <p class="text-muted">` + news[i].description + `</p>
                         </div>
                     </div>`
