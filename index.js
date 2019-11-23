@@ -1,16 +1,16 @@
-let links = document.getElementsByClassName('cat');
-let link = document.getElementsByClassName('count');
-let posts = document.getElementById('posts');
-let category = 'general';
-let country = 'eg';
-let news;
-let term;
-let searchinpu = document.getElementById('Search');
+var links = document.getElementsByClassName('cat');
+var link = document.getElementsByClassName('count');
+var posts = document.getElementById('posts');
+var category = 'general';
+var country = 'eg';
+var news;
+var term;
+var searchinpu = document.getElementById('Search');
 getNews(country, category);
 
 function getNews(count, cat) {
-    let ajaxRequest = new XMLHttpRequest();
-    let url = 'https://newsapi.org/v2/top-headlines?country=' + count + '&category=' + cat + '&apiKey=bafc6082ec9045e58854e236ab2c1b73';
+    var ajaxRequest = new XMLHttpRequest();
+    var url = 'https://newsapi.org/v2/top-headlines?country=' + count + '&category=' + cat + '&apiKey=bafc6082ec9045e58854e236ab2c1b73';
     ajaxRequest.open("GET", url);
 
     ajaxRequest.onreadystatechange = function() {
@@ -29,8 +29,8 @@ searchinpu.addEventListener('keyup', function() {
 });
 
 function globalNewsSearch(term) {
-    let ajaxRequest = new XMLHttpRequest();
-    let url = 'https://newsapi.org/v2/everything?q=' + term + '&apiKey=bafc6082ec9045e58854e236ab2c1b73';
+    var ajaxRequest = new XMLHttpRequest();
+    var url = 'https://newsapi.org/v2/everything?q=' + term + '&apiKey=bafc6082ec9045e58854e236ab2c1b73';
     ajaxRequest.open("GET", url);
 
     ajaxRequest.onreadystatechange = function() {
@@ -46,8 +46,8 @@ function globalNewsSearch(term) {
 
 
 function displayNews() {
-    let newsBox = "";
-    for (let i = 0; i < news.length; i++) {
+    var newsBox = "";
+    for (var i = 0; i < news.length; i++) {
 
         newsBox += `<div class="col-md-3">
                         <div class="new pt-5">
@@ -60,7 +60,7 @@ function displayNews() {
     posts.innerHTML = newsBox;
 }
 //get category
-for (let i = 0; i < links.length; i++) {
+for (var i = 0; i < links.length; i++) {
     links[i].addEventListener("click", function(e) {
         console.log(e.target.innerHTML);
         category = e.target.innerHTML;
@@ -69,7 +69,7 @@ for (let i = 0; i < links.length; i++) {
 
 }
 //get country
-for (let i = 0; i < link.length; i++) {
+for (var i = 0; i < link.length; i++) {
     link[i].addEventListener("click", function(e) {
         console.log(e.target.id);
         country = e.target.id;
